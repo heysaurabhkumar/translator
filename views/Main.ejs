@@ -1,0 +1,56 @@
+<%- include('partials/Header.ejs') %>
+
+<div class="card">
+  <form action="/" method="post">
+    <center>
+      <div class="card-body">
+        <div class="sel">
+          <select
+            class="form-select"
+            name="target"
+            aria-label="Default select example"
+            required
+          >
+            <option selected>Target Language</option>
+            <% languages.forEach(language => { %>
+            <option value="<%= language.code %>"><%= language.name %></option>
+            <% }); %>
+          </select>
+        </div>
+      </div>
+
+      <div class="card-body">
+        <div class="form-floating">
+          <textarea
+            class="form-control"
+            name="source_text"
+            placeholder="Leave a comment here"
+            id="floatingTextarea2"
+            style="height: 100px"
+            required
+          ></textarea>
+          <label for="floatingTextarea2">Enter text in any language</label>
+        </div>
+      </div>
+
+      <button type="submit" class="btn btn-primary">Translate</button>
+    </center>
+  </form>
+
+  <br />
+  <% if(flag) { %>
+  <table class="table table-hover">
+    <tr>
+      <th><%= sourceLan %></th>
+      <th><%= targetLan %></th>
+    </tr>
+    <tr>
+      <td><%= sourceText %></td>
+      <td><%= targetText %></td>
+    </tr>
+  </table>
+  <% } %>
+  <br />
+</div>
+
+<%- include('partials/Footer.ejs') %>

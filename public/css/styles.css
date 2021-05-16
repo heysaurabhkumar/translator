@@ -1,0 +1,24 @@
+footer {
+  width: 100%;
+  text-align: center;
+}
+
+.card-body {
+  width: 50%;
+  margin: auto;
+}
+
+.sel {
+  width: 40%;
+  display: inline-block;
+}
+
+.btn {
+  width: fit-content;
+  margin: auto;
+}
+
+.table {
+  width: 70%;
+  margin: auto;
+}
